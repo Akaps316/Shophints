@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+     
+
+  {% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+  {% endfor %}
+
+
+<div class="row">
+  <div class="col-12 col-md-4 mx-auto my-3">
+    <h1 class="text-center">Register</h1>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-12 col-md-4 mx-auto my-3">
+    <form method="POST"> {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary my-1">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
